@@ -36,7 +36,7 @@ class VGG:
         tf.keras.preprocessing.image.save_img(path_output, stylized_image[0])
         return
     
-with tf.device('/GPU:0'):
+with tf.device('/CPU:0'):
     vgg = VGG()
     vgg.run()
     print('Finish Job!')
