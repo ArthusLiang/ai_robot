@@ -33,7 +33,7 @@ class VGG:
         content = content[tf.newaxis, :]
         outputs = self.hub_module(content, style)
         stylized_image = outputs[0] * 255
-        tf.keras.preprocessing.image.save_img(path_output, stylized_image[0])
+        # tf.keras.preprocessing.image.save_img(path_output, stylized_image[0])
         return
     
 with tf.device('/CPU:0'):
