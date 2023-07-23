@@ -1,0 +1,9 @@
+/.angular/cache
+node_modules/
+output/
+dist/
+yarn.lock
+yarn-error.log
+package-lock.json
+__pycache__/
+**/.DS_Store
