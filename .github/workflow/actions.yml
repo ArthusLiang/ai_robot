@@ -1,0 +1,32 @@
+name: Publish Webex design customize
+on:
+  workflow_dispatch:
+    inputs:
+      cname:
+        required: false
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+          fetch-depth: 2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        # Semantic version range syntax or exact version of a Python version
+        python-version: '3.9'
+        # Optional - x64 or x86 architecture, defaults to x64
+        architecture: 'x64'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tensorflow
+          pip install tensorflow_hub
+    # You can test your matrix by printing the current Python version
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+    - name: RUN VGG
+      run: python src/vgg.py
