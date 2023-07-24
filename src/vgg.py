@@ -1,15 +1,8 @@
-import os
 import re
 import tensorflow as tf
 import tensorflow_hub as hub
 
-current_file_dir = os.path.dirname(os.path.realpath(__file__))
-path_root = os.path.abspath(os.path.join(current_file_dir, '../'))
-path_model = os.path.join(path_root, 'models/magenta_arbitrary-image-stylization-v1-256_2')
-
-path_style = os.path.join(path_root, 'data/style2.png')
-path_content = os.path.join(path_root, 'data/content.png')
-path_output = os.path.join(path_root, 'data/out.jpg')
+from core import path_model, path_style, path_content, path_output
 
 default_re = re.compile(r'.(jpg|png)$', re.I)
 
