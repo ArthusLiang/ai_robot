@@ -1,6 +1,5 @@
 import os
 import re
-import shutil
 import tensorflow as tf
 import tensorflow_hub as hub
 
@@ -33,9 +32,10 @@ class VGG:
         content = content[tf.newaxis, :]
         outputs = self.hub_module(content, style)
         stylized_image = outputs[0] * 255
-        #tf.keras.preprocessing.image.save_img(path_output, stylized_image[0])
+        tf.keras.preprocessing.image.save_img(path_output, stylized_image[0])
         return
     
-vgg = VGG()
-vgg.run()
-print('Finish Job!')
+with tf.device('/CPU:0'):
+    vgg = VGG()
+    vgg.run()
+    print('Finish Job!')
