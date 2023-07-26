@@ -17,8 +17,8 @@ def get_args():
 current_file_dir = os.path.dirname(os.path.realpath(__file__))
 path_root = os.path.abspath(os.path.join(current_file_dir, '../'))
 path_model = os.path.join(path_root, 'models/magenta_arbitrary-image-stylization-v1-256_2')
-path_style = os.path.join(path_root, 'data/style2.png')
-path_content = os.path.join(path_root, 'data/content.png')
+path_style = os.path.join(path_root, 'data/style.png')
+path_content = os.path.join(path_root, 'data/content.jpg')
 path_output = os.path.join(path_root, 'data/out.jpg')
 
 path_input_style = os.path.join(path_root, 'data/input_style.jpg')
