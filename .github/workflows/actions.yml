@@ -30,7 +30,5 @@ jobs:
     # You can test your matrix by printing the current Python version
     - name: Display Python version
       run: python -c "import sys; print(sys.version)"
-    - name: RUN VGG
-      run: python src/vgg.py
-    - name: SEND MESSAGE
-      run: python src/webex.py token=${{ secrets.AI_ROBOT }}
+    - name: RUN Main 
+      run: python src/main.py token=${{ secrets.AI_ROBOT }} message=${{ inputs.cname }}

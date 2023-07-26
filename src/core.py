@@ -20,3 +20,6 @@ path_model = os.path.join(path_root, 'models/magenta_arbitrary-image-stylization
 path_style = os.path.join(path_root, 'data/style2.png')
 path_content = os.path.join(path_root, 'data/content.png')
 path_output = os.path.join(path_root, 'data/out.jpg')
+
+path_input_style = os.path.join(path_root, 'data/input_style.jpg')
+path_input_content = os.path.join(path_root, 'data/input_content.jpg')
